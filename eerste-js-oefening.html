@@ -12,7 +12,7 @@ en uit gaat zetten. -->
 <html>
     <head>
         <style>
-            .tekstvak {
+            .tekstVak {
                 border: 1px solid black;
             }
 
@@ -32,7 +32,7 @@ en uit gaat zetten. -->
 
         <!-- Met Javascript en CSS erbij-->
          <div class="tekstVak">
-            <p class="tekstVerborgen">Als je deze tekst ziet werkt de knop en code.</p>
+            <p class="tekstVerborgen oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
          </div>
         <button class="button1">Toon tekst</button>
 
@@ -43,7 +43,7 @@ en uit gaat zetten. -->
     console.log(buttonResult);
 
     buttonResult.addEventListener("click", function() {
-        const tekstVak = document.querySelector(".tekstVerborgen");
+        const tekstVak = document.querySelector(".oefenTekst");
         tekstVak.classList.toggle("tekstVerborgen");
     });
 
