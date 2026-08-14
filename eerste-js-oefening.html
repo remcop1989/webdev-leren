@@ -12,12 +12,25 @@ en uit gaat zetten. -->
 <html>
     <head>
         <style>
+            body {
+                padding: 10px;
+            }
+
             .tekstVak {
                 border: 1px solid black;
+                margin-bottom: 5px;
+            }
+
+            p {
+                padding: 10px;
             }
 
             .tekstVerborgen {
                 visibility: hidden;
+            }
+
+            details {
+                margin-bottom: 20px;
             }
 
         </style>
@@ -34,7 +47,7 @@ en uit gaat zetten. -->
          <div class="tekstVak">
             <p class="tekstVerborgen oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
          </div>
-        <button class="button1">Toon tekst</button>
+        <button class="button1">Toon/verberg tekst</button>
 
 <script>
     console.log("test");
