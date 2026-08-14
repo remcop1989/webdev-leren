@@ -51,18 +51,23 @@ en uit gaat zetten. -->
         <button class="button1">Toon/verberg tekst</button>
 
 <script>
-    console.log("test");
+    // console.log("test");
 
     const buttonResult = document.querySelector(".button1");
-    console.log(buttonResult);
+    // console.log(buttonResult);
+
+    // Test hoe ik bij de knop tekst kom:
+    console.log(buttonResult.innerHTML);
 
 /*     denk eraan om een andere class te gebruiken om de tekst te selecteren en niet dezelfde class
     Bij gebruik van dezelfde class verwijderd hij na 1 klik namelijk die class en vindt hij hem
     bij de 2e klik niet meer */
     
     buttonResult.addEventListener("click", function() {
-        const tekstVak = document.querySelector(".oefenTekst");
-        tekstVak.classList.toggle("tekstVerborgen");
+        const tekstVakInhoud = document.querySelector(".oefenTekst");
+        const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
+        
+        console.log(isTekstVerborgen);
     });
 
 </script>
