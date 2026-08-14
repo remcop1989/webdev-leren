@@ -71,14 +71,14 @@ en uit gaat zetten. -->
     button1Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        const classNaam = button1Toggle;
+        const classNaam = button1Toggle; //classNaam = button1Toggle.className werkt hier niet want dat geeft een string
         knopTekstWijzigen(isTekstVerborgen, classNaam);
     });
 
     button2Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst2");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        const classNaam = button2Toggle;
+        const classNaam = button2Toggle; //classNaam = button2Toggle.className werkt hier niet want dat geeft een string
         knopTekstWijzigen(isTekstVerborgen, classNaam);
     });
 
