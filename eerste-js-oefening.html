@@ -55,14 +55,11 @@ en uit gaat zetten. -->
             en is de knop herbruikbaar</p>
          </div>
         <button class="button2">Toon tekst</button>
-        
+
 <script>
-    // console.log("test");
 
     const button1Toggle = document.querySelector(".button1");
     const button2Toggle = document.querySelector(".button2");
-
-    // console.log(buttonResult);
 
     // Test hoe ik bij de knop tekst kom:
     // console.log(buttonResult.innerHTML);
@@ -74,14 +71,14 @@ en uit gaat zetten. -->
     button1Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        const classNaam = button1Toggle.className;
+        const classNaam = button1Toggle;
         knopTekstWijzigen(isTekstVerborgen, classNaam);
     });
 
     button2Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst2");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        const classNaam = button2Toggle.className;
+        const classNaam = button2Toggle;
         knopTekstWijzigen(isTekstVerborgen, classNaam);
     });
 
@@ -89,7 +86,7 @@ en uit gaat zetten. -->
         if (isTekstVerborgen === true) {                //=== true kan hier vervallen. Enkel isTekstVerborgen geeft al een boolean "true"
             classNaam.textContent = "Toon tekst";
         } else {
-        classNaam.textContent = "Verberg tekst";
+            classNaam.textContent = "Verberg tekst";
         }
         //dit if-statement kan ook korter (ternary operator) via:
         //buttonResult.textContent = isTekstVerborgen ? "Toon tekst" : "Verberg tekst";
