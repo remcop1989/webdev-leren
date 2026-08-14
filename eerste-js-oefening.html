@@ -50,10 +50,18 @@ en uit gaat zetten. -->
          </div>
         <button class="button1">Toon tekst</button>
 
+        <div class="tekstVak">
+            <p class="tekstVerborgen oefenTekst2">Als je deze tekst ziet werkt de 2e knop en code ook 
+            en is de knop herbruikbaar</p>
+         </div>
+        <button class="button2">Toon tekst</button>
+        
 <script>
     // console.log("test");
 
-    const buttonResult = document.querySelector(".button1");
+    const button1Toggle = document.querySelector(".button1");
+    const button2Toggle = document.querySelector(".button2");
+
     // console.log(buttonResult);
 
     // Test hoe ik bij de knop tekst kom:
@@ -63,18 +71,25 @@ en uit gaat zetten. -->
     Bij gebruik van dezelfde class verwijderd hij na 1 klik namelijk die class en vindt hij hem
     bij de 2e klik niet meer */
     
-    buttonResult.addEventListener("click", function() {
+    button1Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-
-        knopTekstWijzigen(isTekstVerborgen);
+        const classNaam = button1Toggle.className;
+        knopTekstWijzigen(isTekstVerborgen, classNaam);
     });
 
-    function knopTekstWijzigen(isTekstVerborgen) {
+    button2Toggle.addEventListener("click", function() {
+        const tekstVakInhoud = document.querySelector(".oefenTekst2");
+        const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
+        const classNaam = button2Toggle.className;
+        knopTekstWijzigen(isTekstVerborgen, classNaam);
+    });
+
+    function knopTekstWijzigen(isTekstVerborgen, classNaam) {
         if (isTekstVerborgen === true) {                //=== true kan hier vervallen. Enkel isTekstVerborgen geeft al een boolean "true"
-            buttonResult.textContent = "Toon tekst";
+            classNaam.textContent = "Toon tekst";
         } else {
-        buttonResult.textContent = "Verberg tekst";
+        classNaam.textContent = "Verberg tekst";
         }
         //dit if-statement kan ook korter (ternary operator) via:
         //buttonResult.textContent = isTekstVerborgen ? "Toon tekst" : "Verberg tekst";
