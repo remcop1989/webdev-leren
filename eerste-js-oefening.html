@@ -58,37 +58,44 @@ en uit gaat zetten. -->
 
 <script>
 
+    document.querySelector(".button1").addEventListener("click", verbergTekstVeranderKnop);
+    document.querySelector(".button2").addEventListener("click", verbergTekstVeranderKnop);
+
+    function verbergTekstVeranderKnop() {
+        //welke knop wordt er ingedrukt
+        //welke tekst hoort hier bij
+        //toggle de class van deze tekst
+        //verander de naam van de knop
+        if (isTekstVerborgen === true) {
+            knopElement.textContent = "Toon tekst";
+        } else {
+            knopElement.textContent = "Verberg tekst";
+        }
+    }
+
     const button1Toggle = document.querySelector(".button1");
     const button2Toggle = document.querySelector(".button2");
-
-/*     denk eraan om een andere class te gebruiken om de tekst te selecteren en niet dezelfde class
-    Bij gebruik van dezelfde class verwijderd hij na 1 klik namelijk die class en vindt hij hem
-    bij de 2e klik niet meer */
     
     button1Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        //const classNaam = button1Toggle; //classNaam = button1Toggle.className werkt hier niet want dat geeft een string
-        //Bovenstaand statement "const classNaam" is overbodig. Eenvoudig button1Toggle doorgeven.
-        knopTekstWijzigen(isTekstVerborgen, button1Toggle /* classNaam */);
+        knopTekstWijzigen(isTekstVerborgen, button1Toggle);
     });
 
     button2Toggle.addEventListener("click", function() {
         const tekstVakInhoud = document.querySelector(".oefenTekst2");
         const isTekstVerborgen = tekstVakInhoud.classList.toggle("tekstVerborgen");
-        //const classNaam = button2Toggle; //classNaam = button2Toggle.className werkt hier niet want dat geeft een string
-        //Bovenstaand statement "const classNaam" is overbodig. Eenvoudig button2Toggle doorgeven.
-        knopTekstWijzigen(isTekstVerborgen, button2Toggle /* classNaam */);
+        knopTekstWijzigen(isTekstVerborgen, button2Toggle);
     });
 
-    function knopTekstWijzigen(isTekstVerborgen, classNaam) {
-        if (isTekstVerborgen === true) {                //=== true kan hier vervallen. Enkel isTekstVerborgen geeft al een boolean "true"
-            classNaam.textContent = "Toon tekst";
+    function knopTekstWijzigen(isTekstVerborgen, knopElement) {
+        if (isTekstVerborgen === true) { //true is overbodig. isTekstVerborgen is al boolean
+            knopElement.textContent = "Toon tekst";
         } else {
-            classNaam.textContent = "Verberg tekst";
+            knopElement.textContent = "Verberg tekst";
         }
-        //dit if-statement kan ook korter (ternary operator) via:
-        //buttonResult.textContent = isTekstVerborgen ? "Toon tekst" : "Verberg tekst";
+        //dit if-statement kan ook korter (ternary operator):
+        //knopElement.textContent = isTekstVerborgen ? "Toon tekst" : "Verberg tekst";
     }
 
 </script>
