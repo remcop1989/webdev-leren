@@ -10,20 +10,44 @@ Denk aan een property die je al kent — dat is namelijk het ding dat JS straks 
 en uit gaat zetten. -->
 
 <html>
+    <head>
+        <style>
+            .tekstvak {
+                border: 1px solid black;
+            }
+
+            .tekstVerborgen {
+                visibility: hidden;
+            }
+
+        </style>
+    </head>
     <body>
+
+        <!-- Met alleen HTML-->
         <details>
-        <summary>Klik hier</summary>
-        Dit is een stuk oefentekst om de oefening in te vullen.
+            <summary>Klik hier</summary>
+            Dit is een stuk oefentekst om de oefening in te vullen.
         </details>
 
-<!-- Nu met Javascript -->
-
-        <button class="button1">Knop</button>
-
-    </body>
-
-</html>
+        <!-- Met Javascript en CSS erbij-->
+         <div class="tekstVak">
+            <p class="tekstVerborgen">Als je deze tekst ziet werkt de knop en code.</p>
+         </div>
+        <button class="button1">Toon tekst</button>
 
 <script>
-    document.querySelector(".button1");
+    console.log("test");
+
+    const buttonResult = document.querySelector(".button1");
+    console.log(buttonResult);
+
+    buttonResult.addEventListener("click", function() {
+        const tekstVak = document.querySelector(".tekstVerborgen");
+        tekstVak.classList.toggle("tekstVerborgen");
+    });
+
 </script>
+
+    </body>
+</html>
