@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!-- een "toon/verberg"-knop — het patroon achter FAQ-accordions, "lees meer"-links, 
 dropdown-menu's. Klein genoeg om in één keer te overzien, maar je raakt meteen 
 de drie basisonderdelen van JS-in-de-browser aan: een element selecteren, luisteren 
@@ -58,6 +59,7 @@ en uit gaat zetten. -->
 /*     denk eraan om een andere class te gebruiken om de tekst te selecteren en niet dezelfde class
     Bij gebruik van dezelfde class verwijderd hij na 1 klik namelijk die class en vindt hij hem
     bij de 2e klik niet meer */
+    
     buttonResult.addEventListener("click", function() {
         const tekstVak = document.querySelector(".oefenTekst");
         tekstVak.classList.toggle("tekstVerborgen");
