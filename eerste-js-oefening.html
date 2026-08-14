@@ -42,6 +42,9 @@ en uit gaat zetten. -->
     const buttonResult = document.querySelector(".button1");
     console.log(buttonResult);
 
+/*     denk eraan om een andere class te gebruiken om de tekst te selecteren en niet dezelfde class
+    Bij gebruik van dezelfde class verwijderd hij na 1 klik namelijk die class en vindt hij hem
+    bij de 2e klik niet meer */
     buttonResult.addEventListener("click", function() {
         const tekstVak = document.querySelector(".oefenTekst");
         tekstVak.classList.toggle("tekstVerborgen");
