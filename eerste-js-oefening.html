@@ -112,7 +112,13 @@ const alleKnoppen = document.querySelectorAll(".verbergenKnop");
 alleKnoppen.forEach(function(knop) {
     knop.addEventListener("click", function(event) {
         const teVerbergenTekst = document.querySelector(event.currentTarget.dataset.target);
-        teVerbergenTekst.classList.toggle("tekstVerborgen"); //bij classlist geen "." voor een class
+        const isTekstVerborgen = teVerbergenTekst.classList.toggle("tekstVerborgen"); //bij classlist geen "." voor een class
+        
+        if (isTekstVerborgen) {
+            knop.textContent = "Toon tekst";
+        } else {
+            knop.textContent = "Verberg tekst";
+        }
     });
 });
 
