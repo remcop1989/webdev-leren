@@ -48,13 +48,13 @@ en uit gaat zetten. -->
          <div class="tekstVak">
             <p class="tekstVerborgen oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
          </div>
-        <button class="button1">Toon tekst</button>
+        <button class="button1 verbergenKnop" data-target=".oefenTekst">Toon tekst</button>
 
         <div class="tekstVak">
             <p class="tekstVerborgen oefenTekst2">Als je deze tekst ziet werkt de 2e knop en code ook 
             en is de knop herbruikbaar</p>
          </div>
-        <button class="button2">Toon tekst</button>
+        <button class="button2 verbergenKnop" data-target=".oefenTekst2">Toon tekst</button>
 
 <script>
     /* const button1Toggle = document.querySelector(".button1");
@@ -107,7 +107,14 @@ en uit gaat zetten. -->
 // ---------------------------------------------------------------------------------
 //Nog verder vereenvoudigd met een forEach
 
+const alleKnoppen = document.querySelectorAll(".verbergenKnop");
 
+alleKnoppen.forEach(function(knop) {
+    knop.addEventListener("click", function(event) {
+        const teVerbergenTekst = document.querySelector(event.currentTarget.dataset.target);
+        teVerbergenTekst.classList.toggle("tekstVerborgen"); //bij classlist geen "." voor een class
+    });
+});
 
 </script>
 
