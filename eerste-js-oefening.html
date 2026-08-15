@@ -57,29 +57,6 @@ en uit gaat zetten. -->
         <button class="button2">Toon tekst</button>
 
 <script>
-    document.querySelector(".button1").addEventListener("click", function() {
-        verbergTekstVeranderKnop(document.querySelector(".oefenTekst"), document.querySelector(".button1"));
-    });
-
-    document.querySelector(".button2").addEventListener("click", function() {
-        verbergTekstVeranderKnop(document.querySelector(".oefenTekst2"), document.querySelector(".button2"));
-    });
-
-    function verbergTekstVeranderKnop(toggleTekst, knopElement) {
-        const isTekstVerborgen = toggleTekst.classList.toggle("tekstVerborgen");
-
-        //welke knop wordt er ingedrukt
-        //welke tekst hoort hier bij
-        //toggle de class van deze tekst
-        //verander de naam van de knop
-        if (isTekstVerborgen === true) {
-            knopElement.textContent = "Toon tekst";
-        } else {
-            knopElement.textContent = "Verberg tekst";
-        }
-    }
-
-    //de volgende code doet hetzelfde, alleen in 2 uitgebreidere EventListeners.
     /* const button1Toggle = document.querySelector(".button1");
     const button2Toggle = document.querySelector(".button2");
     
@@ -104,6 +81,33 @@ en uit gaat zetten. -->
         //dit if-statement kan ook korter (ternary operator):
         //knopElement.textContent = isTekstVerborgen ? "Toon tekst" : "Verberg tekst";
     } */
+
+// ---------------------------------------------------------------------------------
+ //de volgende code doet hetzelfde, alleen zit de logica in de functie ipv in 2
+ // uitgebreidere EventListeners.
+
+/*     document.querySelector(".button1").addEventListener("click", function() {
+        verbergTekstVeranderKnop(document.querySelector(".oefenTekst"), document.querySelector(".button1"));
+    });
+
+    document.querySelector(".button2").addEventListener("click", function() {
+        verbergTekstVeranderKnop(document.querySelector(".oefenTekst2"), document.querySelector(".button2"));
+    });
+
+    function verbergTekstVeranderKnop(toggleTekst, knopElement) {
+        const isTekstVerborgen = toggleTekst.classList.toggle("tekstVerborgen");
+
+        if (isTekstVerborgen === true) {
+            knopElement.textContent = "Toon tekst";
+        } else {
+            knopElement.textContent = "Verberg tekst";
+        }
+    } */
+
+// ---------------------------------------------------------------------------------
+//Nog verder vereenvoudigd met een forEach
+
+
 
 </script>
 
