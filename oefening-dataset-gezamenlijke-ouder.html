@@ -17,26 +17,39 @@ kijken we samen verder — en dan pakken we daarna de data-show-text/data-hide-t
             body {
                 padding: 10px;
             }
+
+            .tekstVerborgen {
+                visibility: hidden;
+            }
+
         </style>
     </head>
     <body>
 
+    <div class="tekstVakken">
          <div class="tekstVak">
-            <p class="oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
-            <button class="button1">Toon tekst</button>
+            <p class="oefenTekst tekstVerborgen">Als je deze tekst ziet werkt de knop en code.</p>
+            <button class="button" data-target=".oefenTekst">Toon tekst</button>
         </div>
+
+        <div class="tekstVak">
+            <p class="oefenTekst2 tekstVerborgen">Als je deze tekst ziet werkt de knop en code (2).</p>
+            <button class="button" data-target=".oefenTekst2">Toon tekst</button>
+        </div>
+    </div>
 
 <script>
 
 // 1. Selecteer de ouder (eenmalig, niet in een forEach)
-const ouderElement = document.querySelector(".tekstVak");
+const ouderElement = document.querySelector(".tekstVakken");
 
 // 2. Eén listener op die ouder
 ouderElement.addEventListener("click", function(event) {
     // 3. Hier moet je checken: is event.target wel een knop
     //    met de class "verbergenKnop"?
-    if (event.target.className === "button1") {
-        console.log("Werkt");
+    if (event.target.classList.contains("button")) {
+        const teVerbergenTekst = document.querySelector(event.target.dataset.target);
+        teVerbergenTekst.classList.toggle("tekstVerborgen");
     }
 
     // 4. Zo ja: doe hier ongeveer wat je al had,
