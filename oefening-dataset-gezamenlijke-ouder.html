@@ -17,17 +17,31 @@ kijken we samen verder — en dan pakken we daarna de data-show-text/data-hide-t
             body {
                 padding: 10px;
             }
-
         </style>
     </head>
     <body>
 
          <div class="tekstVak">
-            <p class="tekstVerborgen oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
-         </div>
-        <button class="button1 verbergenKnop" data-target=".oefenTekst">Toon tekst</button>
+            <p class="oefenTekst">Als je deze tekst ziet werkt de knop en code.</p>
+            <button class="button1">Toon tekst</button>
+        </div>
 
 <script>
+
+// 1. Selecteer de ouder (eenmalig, niet in een forEach)
+const ouderElement = document.querySelector(".tekstVak");
+
+// 2. Eén listener op die ouder
+ouderElement.addEventListener("click", function(event) {
+    // 3. Hier moet je checken: is event.target wel een knop
+    //    met de class "verbergenKnop"?
+    if (event.target.className === "button1") {
+        console.log("Werkt");
+    }
+
+    // 4. Zo ja: doe hier ongeveer wat je al had,
+    //    maar dan met event.target i.p.v. knop/currentTarget
+});
 
 </script>
 
