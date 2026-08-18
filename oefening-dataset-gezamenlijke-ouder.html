@@ -29,12 +29,17 @@ kijken we samen verder — en dan pakken we daarna de data-show-text/data-hide-t
     <div class="tekstVakken">
          <div class="tekstVak">
             <p class="oefenTekst tekstVerborgen">Als je deze tekst ziet werkt de knop en code.</p>
-            <button class="button" data-target=".oefenTekst"  data-showtext="Toon tekst" data-hidetext="Verberg tekst">Toon tekst</button>
+            <button class="button" data-target=".oefenTekst"  data-show-text="Toon tekst" data-hide-text="Verberg tekst">Toon tekst</button>
         </div>
 
         <div class="tekstVak">
             <p class="oefenTekst2 tekstVerborgen">Als je deze tekst ziet werkt de knop en code (2).</p>
-            <button class="button" data-target=".oefenTekst2" data-showtext="Toon tekst" data-hidetext="Verberg tekst">Toon tekst</button>
+            <button class="button" data-target=".oefenTekst2" data-show-text="Toon tekst" data-hide-text="Verberg tekst">Toon tekst</button>
+        </div>
+
+        <div class="tekstVak">
+            <p class="oefenTekst3 tekstVerborgen">Als je deze tekst ziet werkt de knop en code (3).</p>
+            <button class="button" data-target=".oefenTekst3" data-show-text="Toon tekst" data-hide-text="Verberg tekst">Toon tekst</button>
         </div>
     </div>
 
@@ -53,7 +58,7 @@ ouderElement.addEventListener("click", function(event) {
         const teVerbergenTekst = document.querySelector(event.target.dataset.target);
         const isTekstVerborgen = teVerbergenTekst.classList.toggle("tekstVerborgen");
         
-        event.target.textContent = isTekstVerborgen ? event.target.dataset.showtext : event.target.dataset.hidetext;
+        event.target.textContent = isTekstVerborgen ? event.target.dataset.showText : event.target.dataset.hideText;
     }
 });
 
