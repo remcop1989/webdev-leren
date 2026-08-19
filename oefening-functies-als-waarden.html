@@ -1,0 +1,41 @@
+<!-- Kleine opdracht om te checken of het concept beklijft: schrijf een functie zegHoi die "Hoi!" logt 
+naar de console. 
+Schrijf daarna een tweede functie voerTweeKeerUit(fn) die de meegegeven functie fn 
+twee keer aanroept. Roep die vervolgens aan met voerTweeKeerUit(zegHoi).
+Let bij die laatste regel goed op: schrijf je zegHoi of zegHoi()? Dat raakt precies aan iets wat je 
+bij oefening 1 ook al tegenkwam (definiëren vs. aanroepen) — dus probeer het zelf te beredeneren 
+voordat je het test. -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+
+<body>
+
+    <script>
+        function zegHoi() {
+            console.log("Hoi!");
+        }
+
+        function zegDoei() {
+            console.log("Doei!");
+        }
+
+        function voerTweeKeerUit(fn) {
+            fn();
+            fn();
+        }
+
+        voerTweeKeerUit(zegHoi);
+
+        voerTweeKeerUit(zegDoei)
+
+    </script>
+
+</body>
+</html>
