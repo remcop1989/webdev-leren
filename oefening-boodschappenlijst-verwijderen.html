@@ -26,7 +26,7 @@ item echt. Dat combineert mooi wat je al kent (event delegation uit oefening 2) 
     </head>
         <body>
         <h1>Boodschappenlijst</h1>
-            <table>
+            <table class="boodschappenlijst">
                 <tr>
                     <th>Omschrijving</th>
                     <th></th>
@@ -49,6 +49,19 @@ item echt. Dat combineert mooi wat je al kent (event delegation uit oefening 2) 
                 </tr>
             </table>
             <script>
+                const ouderElement = document.querySelector(".boodschappenlijst");
+                
+                ouderElement.addEventListener("click", function(event) {
+                    const teVerwijderenItem = event.target;
+
+                    if(confirm("Item verwijderen?")) {
+                        actieFn(teVerwijderenItem);
+                    };
+                });
+
+                function actieFn(item,) {
+                    console.log(item); //als test omdat de "verwijderen" logica nog niet bekend is
+                }
 
             </script>
         </body>
