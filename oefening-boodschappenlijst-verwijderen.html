@@ -52,15 +52,18 @@ item echt. Dat combineert mooi wat je al kent (event delegation uit oefening 2) 
                 const ouderElement = document.querySelector(".boodschappenlijst");
                 
                 ouderElement.addEventListener("click", function(event) {
-                    const teVerwijderenItem = event.target;
-
-                    if(confirm("Item verwijderen?")) {
-                        actieFn(teVerwijderenItem);
+                    if(event.target.classList.contains("delete")) {
+                            const verwijderRij = event.target.closest("tr");
+                            const teVerwijderenItem = event.target.dataset.target.toString()
+                            bevestigActie(function() {
+                            verwijderRij.remove()}, "Item " + teVerwijderenItem.replace(".", "") + " verwijderen?");
                     };
                 });
 
-                function actieFn(item,) {
-                    console.log(item); //als test omdat de "verwijderen" logica nog niet bekend is
+                function bevestigActie(actieFn, boodschap) {
+                    if(confirm(boodschap)) {
+                        actieFn();
+                    };
                 }
 
             </script>
