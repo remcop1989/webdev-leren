@@ -1,5 +1,55 @@
 <!-- Laten we bouwen: een klein lijstje (bijv. een boodschappenlijstje) met per item een "verwijder"-knop
 Klik je op verwijderen, dan komt er eerst een bevestigingsvraag, en alleen bij "ja" verdwijnt het 
 item echt. Dat combineert mooi wat je al kent (event delegation uit oefening 2) met het nieuwe 
-(functies als waarden uit oefening 3), plus twee nieuwe stukjes die we onderweg tegenkomen: -->
+(functies als waarden uit oefening 3), plus twee nieuwe stukjes die we onderweg tegenkomen: 
+1) confirm(boodschap) — een ingebouwde browserfunctie die een pop-up toont met OK/Annuleren, 
+   en een boolean teruggeeft (true bij OK, false bij Annuleren). Geen library nodig, gewoon 
+   beschikbaar in elke browser.
+2) Een element uit de DOM verwijderen — daar zijn we nog niet aan toe geweest; komt later in het 
+   proces.-->
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                padding: 10px;
+            }
+            
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+        <body>
+        <h1>Boodschappenlijst</h1>
+            <table>
+                <tr>
+                    <th class="firstColumn">Omschrijving</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td class="kaas firstColumn">Kaas</td>
+                    <td><button class="delete" data-target=".kaas">Delete</button></td>
+                </tr>
+                <tr>
+                    <td class="eieren firstColumn">Eieren</td>
+                    <td><button class="delete" data-target=".eieren">Delete</button></td>
+                </tr>
+                <tr>
+                    <td class="komkommer firstColumn">Komkommer</td>
+                    <td><button class="delete" data-target=".komkommer">Delete</button></td>
+                </tr>
+                <tr>
+                    <td class="koekjes firstColumn">Koekjes</td>
+                    <td><button class="delete" data-target=".koekjes">Delete</button></td>
+                </tr>
+            </table>
+            <script>
+
+            </script>
+        </body>
+</html>
