@@ -1,5 +1,5 @@
-<!-- Kleine opdracht om te checken of het concept beklijft: schrijf een functie zegHoi die "Hoi!" logt 
-naar de console. 
+<!-- Kleine opdracht om te checken of het concept beklijft: schrijf een functie zegHoi die "Hoi!" 
+logt naar de console. 
 Schrijf daarna een tweede functie voerTweeKeerUit(fn) die de meegegeven functie fn 
 twee keer aanroept. Roep die vervolgens aan met voerTweeKeerUit(zegHoi).
 Let bij die laatste regel goed op: schrijf je zegHoi of zegHoi()? Dat raakt precies aan iets wat je 
@@ -22,7 +22,7 @@ voordat je het test. -->
             console.log("Hoi!");
         }
 
-        function zegDoei() {
+/*         function zegDoei() {
             console.log("Doei!");
         }
 
@@ -33,7 +33,15 @@ voordat je het test. -->
 
         voerTweeKeerUit(zegHoi);
 
-        voerTweeKeerUit(zegDoei)
+        voerTweeKeerUit(zegDoei); */
+
+        function herhaalXKeer(fn, aantal) {
+            for (let i = 0; i < aantal; i++) {
+                fn();
+            };
+        }
+
+        herhaalXKeer(zegHoi, 5);
 
     </script>
 
