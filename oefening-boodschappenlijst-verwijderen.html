@@ -54,7 +54,7 @@ item echt. Dat combineert mooi wat je al kent (event delegation uit oefening 2) 
                 ouderElement.addEventListener("click", function(event) {
                     if(event.target.classList.contains("delete")) {
                             const verwijderRij = event.target.closest("tr");
-                            const teVerwijderenItem = event.target.dataset.target.toString()
+                            const teVerwijderenItem = event.target.dataset.target
                             bevestigActie(function() {
                             verwijderRij.remove()}, "Item " + teVerwijderenItem.replace(".", "") + " verwijderen?");
                     };
