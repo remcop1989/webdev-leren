@@ -26,15 +26,21 @@ voordat je het test. -->
             console.log("Doei!");
         }
 
+// Twee manieren om met functie overTweeKeerUit een andere functie aan te roepen
         function voerTweeKeerUit(fn) {
             fn();
             fn();
+        }
+
+        function voerTweeKeerUit(fn) {
+            fn(fn());
         }
 
         voerTweeKeerUit(zegHoi);
 
         voerTweeKeerUit(zegDoei); */
 
+// For-loop
         function herhaalXKeer(fn, aantal) {
             for (let i = 0; i < aantal; i++) {
                 fn();
