@@ -95,14 +95,14 @@ verwijderen) automatisch klopt. -->
                 const geklikteKnopClasslist = event.target.classList;
                 const teVerwijderenRij = event.target.closest("tr");
                 if (geklikteKnopClasslist.contains("klaarKnop")) {
-                    taakAfhandelen(taakOmschrijving);
+                    taakAfhandelen(taakOmschrijving, event);
                 };
                 if (geklikteKnopClasslist.contains("verwijderKnop")) {
                     taakVerwijderen(teVerwijderenRij, taakOmschrijving);
                 }
             })
 
-            function taakAfhandelen(voltooideTaak) {
+            function taakAfhandelen(voltooideTaak, event) {
                 if(voltooideTaak.classList.toggle("klaar")) {
                     event.target.textContent = event.target.dataset.taakKlaar;
                 } else {
