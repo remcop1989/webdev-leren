@@ -22,6 +22,10 @@ verwijderen) automatisch klopt. -->
             .tabelKop {
                 font-weight: bold;
             }
+
+            .klaar {
+                text-decoration: line-through;
+            }
             
             .kader {
                 display: flex;
@@ -29,46 +33,90 @@ verwijderen) automatisch klopt. -->
                 width: 350px;
                 background-color: mediumaquamarine;
             }
+
+            .secondColumn {
+                width: 70px;
+            }
+
         </style>
     </head>
     <body>
         
         <h1>Things to do</h1>
-        <p>X van de Y taken nog open</p>
+        <p class="aantalTaken"></p>
         
         <div class="kader">
-            <table>
+            <table class="taakTabel">
                 <tr>
                     <td class="tabelKop">Omschrijving</td>
+                    <td class="secondColumn"></td>
                     <td></td>
-                    <td></td>
                 </tr>
                 <tr>
-                    <td>Boodschappen doen</td>
-                    <td><button class="klaarKnop">Klaar</button></td>
-                    <td><button class="verwijderKnop">Verwijder</button></td>
+                    <td class=" taak taak1">Boodschappen doen</td>
+                    <td class="secondColumn"><button class="klaarKnop" data-target=".taak1" data-taak-klaar="Heropen" data-taak-open="Klaar">Klaar</button></td>
+                    <td><button class="verwijderKnop" data-target=".taak1">Verwijder</button></td>
                 </tr>
                 <tr>
-                    <td>Auto tanken</td>
-                    <td><button class="klaarKnop">Klaar</button></td>
-                    <td><button class="verwijderKnop">Verwijder</button></td>
+                    <td class="taak taak2">Auto tanken</td>
+                    <td class="secondColumn"><button class="klaarKnop" data-target=".taak2" data-taak-klaar="Heropen" data-taak-open="Klaar">Klaar</button></td>
+                    <td><button class="verwijderKnop" data-target=".taak2">Verwijder</button></td>
                 </tr>
                 <tr>
-                    <td>Administratie bijwerken</td>
-                    <td><button class="klaarKnop">Klaar</button></td>
-                    <td><button class="verwijderKnop">Verwijder</button></td>
+                    <td class="taak taak3">Administratie bijwerken</td>
+                    <td class="secondColumn"><button class="klaarKnop" data-target=".taak3" data-taak-klaar="Heropen" data-taak-open="Klaar">Klaar</button></td>
+                    <td><button class="verwijderKnop" data-target=".taak3">Verwijder</button></td>
                 </tr>
                 <tr>
-                    <td>Ramen wassen</td>
-                    <td><button class="klaarKnop">Klaar</button></td>
-                    <td><button class="verwijderKnop">Verwijder</button></td>
+                    <td class="taak taak4">Ramen wassen</td>
+                    <td class="secondColumn"><button class="klaarKnop" data-target=".taak4" data-taak-klaar="Heropen" data-taak-open="Klaar">Klaar</button></td>
+                    <td><button class="verwijderKnop" data-target=".taak4">Verwijder</button></td>
                 </tr>
             </table>
 
         </div>
 
         <script>
+            
+            taakTellerBijwerken();
 
+            function taakTellerBijwerken() {
+                const aantalTakenTekst = document.querySelector(".aantalTaken");
+                const alleTakenAantal = document.querySelectorAll(".taak").length;
+                const afgerondeTakenAantal = document.querySelectorAll(".klaar").length;
+                const openTakenAantal = alleTakenAantal - afgerondeTakenAantal;
+                aantalTakenTekst.textContent = "Er zijn nog " + openTakenAantal + " van de " + alleTakenAantal + " taken open";
+            }
+
+            const tabelMetTaken = document.querySelector(".taakTabel");
+
+            tabelMetTaken.addEventListener("click", function(event) {
+                const taakOmschrijving = document.querySelector(event.target.dataset.target); //zoekt de data-target waarde van het element waar op geklikt wordt en zoekt dan de bijbehorende taak erbij door het eerste element te selecteren waarvan de classname overeenkomt met de dataset    
+                const geklikteKnopClasslist = event.target.classList;
+                const teVerwijderenRij = event.target.closest("tr");
+                if (geklikteKnopClasslist.contains("klaarKnop")) {
+                    taakAfhandelen(taakOmschrijving);
+                };
+                if (geklikteKnopClasslist.contains("verwijderKnop")) {
+                    taakVerwijderen(teVerwijderenRij, taakOmschrijving);
+                }
+            })
+
+            function taakAfhandelen(voltooideTaak) {
+                if(voltooideTaak.classList.toggle("klaar")) {
+                    event.target.textContent = event.target.dataset.taakKlaar;
+                } else {
+                    event.target.textContent = event.target.dataset.taakOpen;
+                }
+                taakTellerBijwerken()
+            }
+
+            function taakVerwijderen(verwijderRij, taak) {
+                if(confirm("Taak " + "'" + taak.textContent + "'"+ " verwijderen?")) {
+                    verwijderRij.remove();
+                    taakTellerBijwerken();
+                }
+            }
         </script>
     </body>
 </html>
