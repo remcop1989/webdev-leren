@@ -53,24 +53,41 @@
 
         </div>
         <script>
-            //vereenvoudigen naar gezamenlijke functie zoals oefening 3
-            //maak een js variabele om waarde van teller te onthouden ipv via DOM
             const minusButton = document.querySelector(".minus");
             const plusButton = document.querySelector(".plus");
             const resetButton = document.querySelector(".reset");
             const displayNumber = document.querySelector(".display");
+            let tellerWaarde = 0;
 
             plusButton.addEventListener('click', function() {
-                displayNumber.textContent = Number(displayNumber.textContent) + 1;
+                displayBijwerken(plusOne);
             })
 
-            minusButton.addEventListener('click', function() {
-                displayNumber.textContent = Number(displayNumber.textContent) - 1;
+            minusButton.addEventListener('click', function() {;
+                displayBijwerken(minusOne);
             })
 
             resetButton.addEventListener('click', function() {
-                displayNumber.textContent = 0;
+                displayBijwerken(reset);
             })
+
+            function displayBijwerken(rekenWaarde) {
+                tellerWaarde = rekenWaarde(tellerWaarde);
+                displayNumber.textContent = tellerWaarde;
+            }
+
+            function plusOne(beginWaarde) {
+                return beginWaarde + 1;
+            }
+
+            function minusOne(beginWaarde) {
+                return beginWaarde - 1;
+            }
+
+            function reset() {
+                return tellerWaarde = 0;
+            }
+
         </script>
     </body>
 </html>
