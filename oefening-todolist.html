@@ -32,10 +32,16 @@ verwijderen) automatisch klopt. -->
                 justify-content: center;
                 width: 350px;
                 background-color: mediumaquamarine;
+                padding: 15px;
+                border-radius: 30px;
             }
 
             .secondColumn {
                 width: 70px;
+            }
+
+            caption {
+                color: red;
             }
 
         </style>
@@ -43,10 +49,12 @@ verwijderen) automatisch klopt. -->
     <body>
         
         <h1>Things to do</h1>
-        <p class="aantalTaken"></p>
+
         
         <div class="kader">
+
             <table class="taakTabel">
+                <caption><p class="aantalTaken"></p></caption>
                 <tr>
                     <td class="tabelKop">Omschrijving</td>
                     <td class="secondColumn"></td>
