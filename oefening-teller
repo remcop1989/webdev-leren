@@ -23,6 +23,7 @@
             .buttons {
                 display: flex;
                 justify-content: space-between;
+                padding: 5px;
             }
 
             .teller {
@@ -51,11 +52,17 @@
                 <button class="reset">Reset</button>
             </div>
 
+            <div class="buttons">
+                <input type="text" class="multiplyValue">
+                <button class="multiply">x</button>
+            </div>
         </div>
+
         <script>
             const minusButton = document.querySelector(".minus");
             const plusButton = document.querySelector(".plus");
             const resetButton = document.querySelector(".reset");
+            const multiplyButton = document.querySelector(".multiply")
             const displayNumber = document.querySelector(".display");
             let tellerWaarde = 0;
 
@@ -69,6 +76,10 @@
 
             resetButton.addEventListener('click', function() {
                 displayBijwerken(reset);
+            })
+
+            multiplyButton.addEventListener('click', function() {
+                displayBijwerken(timesOne);
             })
 
             function displayBijwerken(rekenWaarde) {
@@ -87,6 +98,18 @@
             function reset() {
                 return tellerWaarde = 0;
             }
+
+            function timesOne() {
+                const multiply = document.querySelector(".multiplyValue").value;
+/*                 if (multiply === "") {
+                    return tellerWaarde;
+                } else {
+                    return tellerWaarde * multiply;
+                } */
+
+                return multiply === "" ? tellerWaarde : tellerWaarde * multiply;
+            }
+            
 
         </script>
     </body>
