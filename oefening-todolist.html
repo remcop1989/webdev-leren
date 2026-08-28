@@ -3,9 +3,9 @@
 en "Heropen" — dit ken je al uit oefening 1/2.
 2) een knop "Verwijder" die eerst een bevestigingsvraag toont met de naam van de taak, en pas bij "ja" de 
 rij echt verwijdert — dit ken je uit oefening 4 (closures, confirm(), .closest(), .remove()).
-3) Eén listener per functionaliteit via event delegation op het gezamenlijke ouderelement (niet per knop) 
+Eén listener per functionaliteit via event delegation op het gezamenlijke ouderelement (niet per knop) 
 — dus je moet in je click-handler onderscheiden of er op "Klaar" of op "Verwijder" geklikt is.
-Onderaan een regel tekst: "X van de Y taken nog open", die na élke wijziging (afvinken, heropenen, 
+3) Onderaan een regel tekst: "X van de Y taken nog open", die na élke wijziging (afvinken, heropenen, 
 verwijderen) automatisch klopt. -->
 
 <!-- =================================================================================================== -->
@@ -14,12 +14,61 @@ verwijderen) automatisch klopt. -->
 <html>
     <head>
         <style>
-
+            html {
+                background-color: lightyellow;
+                display: flex;
+                justify-content: center;
+            }
+            .tabelKop {
+                font-weight: bold;
+            }
+            
+            .kader {
+                display: flex;
+                justify-content: center;
+                width: 350px;
+                background-color: mediumaquamarine;
+            }
         </style>
     </head>
     <body>
+        
+        <h1>Things to do</h1>
+        <p>X van de Y taken nog open</p>
+        
+        <div class="kader">
+            <table>
+                <tr>
+                    <td class="tabelKop">Omschrijving</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Boodschappen doen</td>
+                    <td><button class="klaarKnop">Klaar</button></td>
+                    <td><button class="verwijderKnop">Verwijder</button></td>
+                </tr>
+                <tr>
+                    <td>Auto tanken</td>
+                    <td><button class="klaarKnop">Klaar</button></td>
+                    <td><button class="verwijderKnop">Verwijder</button></td>
+                </tr>
+                <tr>
+                    <td>Administratie bijwerken</td>
+                    <td><button class="klaarKnop">Klaar</button></td>
+                    <td><button class="verwijderKnop">Verwijder</button></td>
+                </tr>
+                <tr>
+                    <td>Ramen wassen</td>
+                    <td><button class="klaarKnop">Klaar</button></td>
+                    <td><button class="verwijderKnop">Verwijder</button></td>
+                </tr>
+            </table>
+
+        </div>
+
         <script>
-            
+
         </script>
     </body>
 </html>
