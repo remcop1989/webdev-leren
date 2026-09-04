@@ -1,3 +1,24 @@
+:root {
+    --backgroundColor: hsl(47, 88%, 63%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --grayColor: hsl(0, 0%, 42%);
+    --gray950Color: hsl(0, 0%, 7%);
+}
+
 body {
-    background-color: black;
+    background-color: var(--backgroundColor);
+        font-family: 'Figtree', Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+
+.card {
+    background-color: var(--whiteColor);
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    
 }
