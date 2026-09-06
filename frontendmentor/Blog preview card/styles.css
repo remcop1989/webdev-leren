@@ -82,7 +82,8 @@ p {
 
 .card:hover {
     cursor: pointer;
-    .hover-effect {
-        text-decoration: underline;
-    }
+}
+
+.text:hover {
+    text-decoration: underline;
 }
