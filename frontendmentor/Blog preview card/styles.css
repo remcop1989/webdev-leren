@@ -87,13 +87,12 @@ a {
     color: var(--gray950Color);
 }
 
-h1:hover {
+a:hover {
     cursor: pointer;
     color: var(--backgroundColor);
 }
 
-h1:focus {
+a:focus {
     cursor: pointer;
     color: var(--backgroundColor);
 }
-
